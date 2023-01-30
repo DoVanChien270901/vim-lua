@@ -33,6 +33,7 @@ keymap.set('n', '<c-l>', '<c-w>l', opts)
 --keymap.set('n', 'p', '"+p', opts)
 keymap.set('n', '<S-x>', 'V"+x', opts)
 --keymap.set('n', 'x', '"+x', opts)
+--keymap.set('n', 'p', '"+p', opts)
 
 
 
@@ -46,6 +47,8 @@ vim.api.nvim_set_keymap(
 
 -- slim syntax highlighting
 vim.cmd[[autocmd BufNewFile,BufRead *.slim setlocal filetype=slim]]
+vim.cmd([[let g:indentLine_char_list = ['|', '¦', '┆', '┊'] ]])
+
 
 vim.cmd[[
 let g:closetag_filenames = '*.html.erb,*.html'

@@ -2,6 +2,10 @@ local status, cmp = pcall(require, "cmp")
 if (not status) then return end
 local lspkind = require 'lspkind'
 
+-- change background color
+vim.api.nvim_set_hl(0, "MyMenu", { bg = "#131516", fg = "#2AA198" })
+--vim.cmd([[hi CursorLine term=bold cterm=bold guibg=Grey40]])
+vim.api.nvim_set_hl(0, "MenuHover", { bg = "#2AA198", fg = "#131516", bold = true, term=bold, cterm=bold})
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -25,10 +29,14 @@ cmp.setup({
       select = true
     }),
   }),
+-- winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:MyMenu,CursorLine:MyMenuSel,Search:None",
   window = {
-    documentation = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered({
+      winhighlight = "Normal:MyMenu,FloatBorder:MyMenu,CursorLine:MyMenuSel,Search:None",
+    }),
     completion = cmp.config.window.bordered({
-      winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+      --winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+      winhighlight = "Normal:MyMenu,FloatBorder:MyMenu,CursorLine:CursorLine,Search:None",
     }),
   },
   sources = cmp.config.sources({

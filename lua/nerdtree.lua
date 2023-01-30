@@ -9,9 +9,11 @@ vim.api.nvim_set_keymap(
 )
 -- icon
 vim.cmd([[
+let g:NERDTreeStatusline = '%#NonText#'
 let g:nerdtree_sync_cursorline = 1
 let g:NERDTreeDirArrowExpandable = '▾'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeShowHidden=1
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',

@@ -3,17 +3,23 @@ require('mason-config')
 --require('solargraph')
 --require('code-completion')
 require('nerdtree')
---require('airline')
 require('fzf')
 require('gitgutter')
 require('base')
 require('highlights')
 require('maps')
-require('lualineconfig')
 --vim.opt.termguicolors = true
 --require'colorizer'.setup()
 
 vim.cmd([[colorscheme solarized]])
+
+--vim.cmd[[colorscheme darcula]]
+vim.cmd([[
+  if exists('g:neovide')
+  	colorscheme solarized
+  en
+]])
+vim.cmd([[set guifont=JetBrains\ Mono\ NL\ Italic:h10]])
 --vim.cmd([[let g:cssColorVimDoNotMessMyUpdatetime = 1
 --]])
 --vim.cmd([[
